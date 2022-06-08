@@ -11,6 +11,7 @@ if ($_SESSION["UsuarioNivel"] != "ADM") echo "<script>alert('Você não é Admin
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyStock - Administração</title>
+    <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="sistema-adm.css">
 </head>
 
