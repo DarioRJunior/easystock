@@ -30,13 +30,21 @@ VALUES
 (
     1,
     'Dario Junior',
-    'easystock',
+    'EasyStock',
     'dario@gmail.com',
     '123',
     'ADM'
 ),
 (
-     2,
+    2,
+    'Gabriel Muniz'
+    'EasyStock',
+    'gabriel@gmail.com',
+    '123',
+    'ADM'
+),
+(
+     3,
     'Haroldo Portela',
     'Harry Pote',
     'harry@hotmail.com',
