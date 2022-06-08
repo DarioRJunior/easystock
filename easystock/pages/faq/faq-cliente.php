@@ -10,9 +10,9 @@ require '../../connection/verifica.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyStock - Sistema</title>
+    <title>EasyStock - F.A.Q</title>
     <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="sistema-cliente.css">
+    <link rel="stylesheet" href="faq-cliente.css">
 </head>
 
 <body>
@@ -23,32 +23,29 @@ require '../../connection/verifica.php';
             </div>
             <ul class="nav-list">
                 <li><a href="../../index.html">Home</a></li>
-                <li><a href="../perfil/editar-perfil-cliente.php?id=<?php echo $_SESSION["id_usuario"];?>" id="btn-perfil">Ver Perfil</a></li>
+                <li><a href="../sistema/sistema-cliente.php" id="btn-voltar">Voltar</a></li>
                 <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
             </ul>
         </nav>
     </header>
-    <div class="cliente">
-        <p> Bem vindo, <?php echo $_SESSION["nome_usuario"]; ?> - Empresa: <?php echo $_SESSION["nome_empresa"]; ?></p>
-    </div>
-    <main>
-        <section class="sistema">
-            <div class="sistema-box">
-                <div class="sistema-container">
-                    <h2>O que deseja fazer?</h2>
-                    <a href="#">Registrar Vendas</a>
-                    <a href="#">Ver Estoque</a>
-                    <a href="#">Ver relatório</a>
-                    <a href="../faq/faq-cliente.php">F.A.Q</a>
-                </div>
+
+    <h1 class="titulo">F.A.Q</h1>
+
+    <section id="manual">
+        <div class="manual-container">
+            <h2>Manual do Sistema</h2>
+            <div class="manual-conteudo">
+                <p>Olá, <?php echo $_SESSION["nome_usuario"]; ?>, Está enfrentando alguma dificuldade para entender o funcionamento do EasyStock?</p>
+                <p>Baixe nosso manual:</p>
+                <button><a href="../../src/manual/manual_do_sistema.pdf" download="Manual do Sistema" class="">Fazer Download</a></button>
             </div>
-        </section>
-    </main>
+        </div>
+
+    </section>
 
     <footer id="footer">
         <p class="copyright"> Dario Junior & Gabriel Muniz &copy; 2022 </p>
     </footer>
-
 </body>
 
 </html>
