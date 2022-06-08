@@ -41,7 +41,8 @@ if (!empty($_GET['id'])) {
             </div>
             <ul class="nav-list">
                 <li><a href="../../index.html">Home</a></li>
-                <li><a href="../login/login.php" id="btn-login">Login</a></li>
+                <li><a href="../sistema/sistema-cliente.php" id="btn-voltar">Voltar</a></li>
+                <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +51,7 @@ if (!empty($_GET['id'])) {
         <div class="box">
             <form action="saveEdit.php" method="POST">
                 <fieldset>
-                    <legend><b>Fórmulário de Clientes</b></legend>
+                    <legend><b>Editar seu perfil</b></legend>
                     <br>
                     <div class="inputBox">
                         <input type="text" name="nome" id="nome" value="<?php echo $nome ?>" class="inputUser" required>

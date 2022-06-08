@@ -68,7 +68,7 @@ a {
     color: var(--light-blue);
 }
 
-#btn-login {
+#btn-sair {
     color: var(--white);
     background-color: var(--light-blue);
     border-radius: 10px;
@@ -77,12 +77,12 @@ a {
     transform: all 0.3s ease-in-out;
 }
 
-#btn-login:hover {
+#btn-sair:hover {
     color: var(--light-blue);
     background-color: var(--white);
 }
 
-#btn-cadastrar {
+#btn-voltar {
     color: var(--white);
     background-color: var(--light-blue);
     border-radius: 10px;
@@ -91,7 +91,7 @@ a {
     transform: all 0.3s ease-in-out;
 }
 
-#btn-cadastrar:hover {
+#btn-voltar:hover {
     color: var(--light-blue);
     background-color: var(--white);
 }
@@ -158,7 +158,7 @@ legend {
     color: var(--white);
 }
 
-#submit {
+#update {
     background: var(--blue);
     width: 100%;
     border: none;
@@ -170,7 +170,7 @@ legend {
     transition: all 0.4s ease-in-out;
 }
 
-#submit:hover {
+#update:hover {
     background: var(--second-bg);
 }
 
