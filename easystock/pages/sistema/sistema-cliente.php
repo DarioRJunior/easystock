@@ -22,7 +22,6 @@ require '../../connection/verifica.php';
                 <img src="../../src/img/logo.png" alt="">
             </div>
             <ul class="nav-list">
-                <li><a href="../../index.html">Home</a></li>
                 <li><a href="../perfil/editar-perfil-cliente.php?id=<?php echo $_SESSION["id_usuario"];?>" id="btn-perfil">Ver Perfil</a></li>
                 <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
             </ul>
@@ -36,6 +35,7 @@ require '../../connection/verifica.php';
             <div class="sistema-box">
                 <div class="sistema-container">
                     <h2>O que deseja fazer?</h2>
+                    <a href="../produtos/cadastro-produtos.php">Registrar Produto</a>
                     <a href="../vendas/cadastrar-vendas.php">Registrar Vendas</a>
                     <a href="#">Ver Estoque</a>
                     <a href="../relatorio/relatorio.php">Ver relatório</a>

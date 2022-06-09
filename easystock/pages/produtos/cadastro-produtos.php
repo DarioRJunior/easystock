@@ -1,20 +1,3 @@
-<?php
-require('../../connection/verifica.php');
-include_once('../../connection/config.php');
-
-
-if (isset($_POST['submit'])) {
-    $id_clientes = $_SESSION['id_usuario'];
-    $produto = $_POST['produto'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
-
-
-    $result = mysqli_query($con, "INSERT INTO vendas (id_cliente, nome, preco, quantidade, dataVenda) VALUES ('$id_clientes', '$produto', $preco', '$quantidade', NOW())");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,7 +7,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyStock - Cadastro de vendas</title>
     <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="cadastrar-vendas.css">
+    <link rel="stylesheet" href="cadastro-produtos.css">
 </head>
 
 <body>
@@ -44,20 +27,11 @@ if (isset($_POST['submit'])) {
         <div class="box">
             <form action="cadastrar-vendas.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
-                    <legend><b>Cadastar venda</b></legend>
+                    <legend><b>Cadastar Produto</b></legend>
                     <br>
                     <div class="inputBox">
-                        <label for="produto">Produto</label> <br>
-                        <select name="produto" id="produto">
-                            <option selected disable value="">Escolha...</option>
-                            <?php
-                            $result_produtos = "SELECT * FROM produtos";
-                            $resultado_produtos = mysqli_query($con, $result_produtos);
-                            while ($row_produtos = mysqli_fetch_assoc($resultado_produtos)) {
-                                echo '<option value="' . $row_produtos['id'] . '">' . $row_produtos['nome'] . '</option>';
-                            }
-                            ?>
-                        </select>
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                        <label for="nome" class="labelInput">Nome do produto</label>
                     </div>
                     <br><br>
                     <div class="inputBox">

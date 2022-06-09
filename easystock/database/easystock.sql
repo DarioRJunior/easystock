@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `produtos`(
     `id_clientes` int(2) NOT NULL,
     `nome` varchar(45) NOT NULL,
     `quantidade` int NOT NULL,
-    `preco` float NOT NULL,
+    `preco` DECIMAL(10, 2) NOT NULL,
     PRIMARY KEY (`id_produto`),
     FOREIGN KEY (`id_clientes`) REFERENCES `clientes`(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
@@ -77,26 +77,24 @@ VALUES
         3,
         'Bolo no Pote - Chocolate',
         '20',
-        '15.00'
+        '15,00'
     ),
     (
         2,
         3,
         'Bolo no Pote - Chocolate com morango',
         '10',
-        '20.00'
+        '20,00'
     );
 
 CREATE TABLE IF NOT EXISTS `vendas`(
     `id_venda` int(2) NOT NULL AUTO_INCREMENT,
-    `id_produto` int(2) NOT NULL,
     `id_clientes` int(2) NOT NULL,
     `nome` varchar(45) NOT NULL,
     `preco` DECIMAL(10, 2) NOT NULL,
     `quantidade` int NOT NULL,
-    `dataVenda` date NOT NULL,
+    `dataVenda` date,
     PRIMARY KEY (`id_venda`),
-    FOREIGN KEY (`id_produto`) REFERENCES `produtos`(`id_produto`),
     FOREIGN KEY (`id_clientes`) REFERENCES `clientes`(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
 
@@ -105,10 +103,33 @@ INSERT INTO
 VALUES
     (
         1,
-        1,
         3,
         'Bolo no Pote - Chocolate',
         '30,00',
         '2',
-        '2018-01-01'
+        now()
+    ),
+    (
+        2,
+        3,
+        'Bolo no Pote - Chocolate com morango',
+        '80,00',
+        '4',
+        now()
+    ),
+    (
+        3,
+        3,
+        'Bolo no Pote - Chocolate com morango',
+        '20,00',
+        '1',
+        '2022-05-25'
+    ),
+    (
+        4,
+        3,
+        'Bolo no Pote - Chocolate',
+        '15,00',
+        '1',
+        '2022-05-25'
     );
