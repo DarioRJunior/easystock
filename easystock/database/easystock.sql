@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `clientes`(
 
 -- Criando login ADM e um Cliente para testes
 INSERT INTO
-    `clientes`(
+    `clientes` (
         `id`,
         `nome`,
         `nome_empresa`,
@@ -27,77 +27,84 @@ INSERT INTO
         `nivel`
     )
 VALUES
-(
-    1,
-    'Dario Junior',
-    'EasyStock',
-    'dario@gmail.com',
-    '123',
-    'ADM'
-),
-(
-    2,
-    'Gabriel Muniz'
-    'EasyStock',
-    'gabriel@gmail.com',
-    '123',
-    'ADM'
-),
-(
-     3,
-    'Haroldo Portela',
-    'Harry Pote',
-    'harry@hotmail.com',
-    '123',
-    'USER'
-);
+    (
+        1,
+        'Dario Junior',
+        'EasyStock',
+        'dario@gmail.com',
+        '123',
+        'ADM'
+    ),
+    (
+        2,
+        'Gabriel Muniz',
+        'EasyStock',
+        'gabriel@gmail.com',
+        '123',
+        'ADM'
+    ),
+    (
+        3,
+        'Haroldo Portela',
+        'Harry Pote',
+        'harry@hotmail.com',
+        '123',
+        'USER'
+    );
 
 --Estrutura da tabela produtos
 CREATE TABLE IF NOT EXISTS `produtos`(
     `id_produto` int(2) NOT NULL AUTO_INCREMENT,
-    `id` int(2) NOT NULL,
+    `id_clientes` int(2) NOT NULL,
     `nome` varchar(45) NOT NULL,
     `quantidade` int NOT NULL,
     `preco` float NOT NULL,
-    PRIMARY KEY (`id_produto`)
+    PRIMARY KEY (`id_produto`),
+    FOREIGN KEY (`id_clientes`) REFERENCES `clientes`(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
 
-INSERT INTO 
-    `produtos`
+INSERT INTO
+    `produtos`(
+        `id_produto`,
+        `id_clientes`,
+        `nome`,
+        `quantidade`,
+        `preco`
+    )
 VALUES
-(
-    1,
-    3,
-    'Bolo no Pote - Chocolate'
-    '20',
-    '15.00'
-),
-(
-    2,
-    3,
-    'Bolo no Pote - Chocolate com morango'
-    '10',
-    '20.00'
-);
+    (
+        1,
+        3,
+        'Bolo no Pote - Chocolate',
+        '20',
+        '15.00'
+    ),
+    (
+        2,
+        3,
+        'Bolo no Pote - Chocolate com morango',
+        '10',
+        '20.00'
+    );
 
 CREATE TABLE IF NOT EXISTS `vendas`(
     `id_venda` int(2) NOT NULL AUTO_INCREMENT,
     `id_produto` int(2) NOT NULL,
-    `id` int(2) NOT NULL,
+    `id_clientes` int(2) NOT NULL,
     `preco` float NOT NULL,
     `quantidade` int NOT NULL,
     `dataVenda` date NOT NULL,
-    PRIMARY KEY (`id_produto`)
+    PRIMARY KEY (`id_venda`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
 
 INSERT INTO
     `vendas`
 VALUES
-(
-    1,
-    1,
-    3,
-    '30.00',
-    '2',
-    '08/06/2022'
-);
+    (
+        1,
+        1,
+        3,
+        '30.00',
+        '2',
+        '08/06/2022'
+    );
