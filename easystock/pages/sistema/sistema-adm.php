@@ -22,14 +22,25 @@ if ($_SESSION["UsuarioNivel"] != "ADM") echo "<script>alert('Você não é Admin
                 <img src="../../src/img/logo.png" alt="">
             </div>
             <ul class="nav-list">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
+                <li><a href="../login/login.php" id="btn-sair">Sair do sistema</a></li>
             </ul>
         </nav>
     </header>
     <div class="adm">
         <p> Bem vindo ADM: <?php echo $_SESSION["nome_usuario"]; ?> - <?php echo $_SESSION["nome_empresa"]; ?></p>
     </div>
+
+    <main>
+        <section class="sistema">
+            <div class="sistema-box">
+                <div class="sistema-container">
+                    <h2>Sistema <?php echo $_SESSION["nome_empresa"]; ?></h2>
+                    <a href="../cadastro/cadastrar-adm.php">Cadastrar Administrador</a>
+                    <a href="#">Ver clientes</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer id="footer">
         <p class="copyright"> Dario Junior & Gabriel Muniz &copy; 2022 </p>

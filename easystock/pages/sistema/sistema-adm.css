@@ -92,6 +92,66 @@ a {
 
 /* HEADER */
 
+/* SISTEMA */
+
+.sistema {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-around;
+    width: 940px;
+    margin: 0 auto;
+    color: var(--white);
+    align-items: center;
+}
+
+.sistema-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main-bg);
+    border-radius: 10px;
+    width: 450px;
+    padding: 10px;
+}
+
+.sistema-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--light-blue);
+    border-radius: 10px;
+    width: 400px;
+    height: 420px;
+    padding: 10px;
+}
+
+.sistema-container h2 {
+    color: var(--white);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sistema-container a {
+    text-decoration: none;
+    text-align: center;
+    background: var(--light-blue);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 80%;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+}
+
+.sistema-container a:hover {
+    background: var(--white);
+    color: var(--light-blue);
+}
+
+/* SISTEMA */
+
 
 /* FOOTER */
 

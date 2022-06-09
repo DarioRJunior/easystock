@@ -9,6 +9,11 @@ if (isset($_POST['submit'])) {
 
     $result = mysqli_query($con, "INSERT INTO clientes (nome, nome_empresa, email, senha, nivel) VALUES ('$nome', '$nome_empresa', '$email', '$senha', 'USER')");
 
+    if ($result) {
+        echo "<script>alert('Usuário cadastrado com sucesso!');top.location.href='../login/login.php';</script>";
+    } else {
+        echo "<script>alert('Erro ao cadastrar usuário!');top.location.href='../login/login.php';</script>";
+    }
 }
 ?>
 
