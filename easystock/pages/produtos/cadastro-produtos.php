@@ -1,3 +1,24 @@
+<?php
+require '../../connection/verifica.php';
+
+if (isset($_POST['submit'])) {
+    include_once('../../connection/config.php');
+    $id_clientes = $_SESSION['id_usuario'];
+    $nome = $_POST['nome'];
+    $quantidade = $_POST['quantidade'];
+    $preco = $_POST['preco'];
+
+    $result = mysqli_query($con, "INSERT INTO produtos (id_clientes, nome, quantidade, preco) VALUES ('$id_clientes', '$nome', '$quantidade', '$preco')");
+
+    if ($result) {
+        echo "<script>alert('Produto cadastrado com sucesso!');</script>";
+    } else {
+        echo "<script>alert('Erro ao cadastrar produto!');</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,9 +46,9 @@
 
     <div class="box-login">
         <div class="box">
-            <form action="cadastrar-vendas.php" method="POST" enctype="multipart/form-data">
+            <form action="cadastro-produtos.php" method="POST">
                 <fieldset>
-                    <legend><b>Cadastar Produto</b></legend>
+                    <legend><b>Cadastrar Produto  no estoque</b></legend>
                     <br>
                     <div class="inputBox">
                         <input type="text" name="nome" id="nome" class="inputUser" required>

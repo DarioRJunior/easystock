@@ -5,12 +5,12 @@ include_once('../../connection/config.php');
 
 if (isset($_POST['submit'])) {
     $id_clientes = $_SESSION['id_usuario'];
-    $produto = $_POST['produto'];
+    $nome = $_POST['produto'];
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
 
 
-    $result = mysqli_query($con, "INSERT INTO vendas (id_cliente, nome, preco, quantidade, dataVenda) VALUES ('$id_clientes', '$produto', $preco', '$quantidade', NOW())");
+    $result = mysqli_query($con, "INSERT INTO vendas (id_cliente, nome, preco, quantidade, dataVenda) VALUES ('$id_clientes', '$nome', $preco', '$quantidade', NOW())");
 }
 
 ?>
