@@ -176,6 +176,32 @@ button{
     border: none;
 }
 
+.btns {
+    width: 100px;
+}
+
+.btnEditar {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.btnEditar:hover {
+    background-color: var(--second-bg);
+}
+
+.btnExcluir {
+    background-color: var(--red);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.btnExcluir:hover {
+    background-color: var(--black-red);
+}
+
 /* FOOTER */
 
 footer {
