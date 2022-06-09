@@ -36,9 +36,9 @@ require '../../connection/verifica.php';
             <div class="sistema-box">
                 <div class="sistema-container">
                     <h2>O que deseja fazer?</h2>
-                    <a href="#">Registrar Vendas</a>
+                    <a href="../vendas/cadastrar-vendas.php">Registrar Vendas</a>
                     <a href="#">Ver Estoque</a>
-                    <a href="#">Ver relatório</a>
+                    <a href="../relatorio/relatorio.php">Ver relatório</a>
                     <a href="../faq/faq-cliente.php">F.A.Q</a>
                 </div>
             </div>

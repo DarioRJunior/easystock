@@ -91,10 +91,13 @@ CREATE TABLE IF NOT EXISTS `vendas`(
     `id_venda` int(2) NOT NULL AUTO_INCREMENT,
     `id_produto` int(2) NOT NULL,
     `id_clientes` int(2) NOT NULL,
-    `preco` float NOT NULL,
+    `nome` varchar(45) NOT NULL,
+    `preco` DECIMAL(10, 2) NOT NULL,
     `quantidade` int NOT NULL,
     `dataVenda` date NOT NULL,
-    PRIMARY KEY (`id_venda`)
+    PRIMARY KEY (`id_venda`),
+    FOREIGN KEY (`id_produto`) REFERENCES `produtos`(`id_produto`),
+    FOREIGN KEY (`id_clientes`) REFERENCES `clientes`(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
 
 INSERT INTO
@@ -104,7 +107,8 @@ VALUES
         1,
         1,
         3,
-        '30.00',
+        'Bolo no Pote - Chocolate',
+        '30,00',
         '2',
-        '08/06/2022'
+        '2018-01-01'
     );
