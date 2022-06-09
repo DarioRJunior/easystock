@@ -110,7 +110,7 @@ VALUES
         'Bolo no Pote - Chocolate',
         '30,00',
         '2',
-        now()
+        '2022-05-25'
     ),
     (
         2,
@@ -119,7 +119,7 @@ VALUES
         'Bolo no Pote - Chocolate com morango',
         '80,00',
         '4',
-        now()
+        '2022-05-25'
     ),
     (
         3,
@@ -128,7 +128,7 @@ VALUES
         'Bolo no Pote - Chocolate com morango',
         '20,00',
         '1',
-        '2022-05-25'
+        NOW()
     ),
     (
         4,
@@ -137,5 +137,5 @@ VALUES
         'Bolo no Pote - Chocolate',
         '15,00',
         '1',
-        '2022-05-25'
+        NOW()
     );
