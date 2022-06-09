@@ -150,6 +150,13 @@ a {
     width: 100px;
 }
 
+.total-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+}
+
 .btn_relatorio {
     color: var(--white);
     background-color: var(--light-blue);

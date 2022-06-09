@@ -3,7 +3,14 @@ require('../../connection/verifica.php');
 include_once '../../connection/config.php';
 
 $sql = "SELECT * FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
+$query_relatorio = "SELECT COUNT(id_venda) AS qnt_vendas, SUM(preco) AS total_vendas FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
 $result = $con->query($sql);
+
+function invdata($dataVenda) 
+{
+    $parte = explode("-", $dataVenda);
+    return ($parte[2] . "-" . $parte[1] . "-" . $parte[0]);
+} 
 
 ?>
 
@@ -55,12 +62,20 @@ $result = $con->query($sql);
                                     echo "<td>" . $row["nome"] . "</td>";
                                     echo "<td>" . $row["quantidade"] . "</td>";
                                     echo "<td>" . $row["preco"] . "</td>";
-                                    echo "<td>" . $row["dataVenda"] . "</td>";
+                                    echo "<td>" . invdata($row["dataVenda"]) . "</td>";
                                     echo "</tr>";
                                 }
                                 ?>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="total-container">
+                        <?php
+                        $result_relatorio = $con->query($query_relatorio);
+                        $row_relatorio = mysqli_fetch_assoc($result_relatorio);
+                        ?>
+                        <h3>Total de vendas: <?php echo $row_relatorio["qnt_vendas"]; ?></h3>
+                        <h3>Total de vendas: R$ <?php echo $row_relatorio["total_vendas"]; ?></h3>
                     </div>
                     <button><a class="btn_relatorio" href="gerarPdf.php" target="_blank">Baixar relatório</a></button>
                 </div>
