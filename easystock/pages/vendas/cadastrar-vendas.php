@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
             </div>
             <ul class="nav-list">
                 <li><a href="../sistema/sistema-cliente.php" id="btn-voltar">Voltar</a></li>
-                <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
+                <li><a href="../login/login.php" id="btn-sair">Sair do sistema</a></li>
             </ul>
         </nav>
     </header>

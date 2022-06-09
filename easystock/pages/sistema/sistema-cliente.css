@@ -7,6 +7,7 @@
     --black: #000;
     --orange: #FF5C00;
     --red: #E00C0C;
+    --black-red: #660606;
 }
 
 * {
@@ -70,7 +71,7 @@ a {
 
 #btn-sair {
     color: var(--white);
-    background-color: var(--light-blue);
+    background-color: var(--red);
     border-radius: 10px;
     padding: 10px;
     text-transform: uppercase;
@@ -78,8 +79,8 @@ a {
 }
 
 #btn-sair:hover {
-    color: var(--light-blue);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--black-red);
 }
 #btn-perfil {
     color: var(--white);

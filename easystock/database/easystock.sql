@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `vendas`(
     `id_venda` int(2) NOT NULL AUTO_INCREMENT,
     `id_clientes` int(2) NOT NULL,
     `id_produto` int(2) NOT NULL,
+    `nome` varchar(45) NOT NULL,
     `preco` DECIMAL(10, 2) NOT NULL,
     `quantidade` int NOT NULL,
     `dataVenda` date,
@@ -106,6 +107,7 @@ VALUES
         1,
         3,
         1,
+        'Bolo no Pote - Chocolate',
         '30,00',
         '2',
         now()
@@ -114,6 +116,7 @@ VALUES
         2,
         3,
         2,
+        'Bolo no Pote - Chocolate com morango',
         '80,00',
         '4',
         now()
@@ -121,7 +124,8 @@ VALUES
     (
         3,
         3,
-        2,
+        1,
+        'Bolo no Pote - Chocolate com morango',
         '20,00',
         '1',
         '2022-05-25'
@@ -129,7 +133,8 @@ VALUES
     (
         4,
         3,
-        1,
+        2,
+        'Bolo no Pote - Chocolate',
         '15,00',
         '1',
         '2022-05-25'

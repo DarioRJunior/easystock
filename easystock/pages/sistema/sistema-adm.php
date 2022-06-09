@@ -27,8 +27,9 @@ if ($_SESSION["UsuarioNivel"] != "ADM") echo "<script>alert('Você não é Admin
             </ul>
         </nav>
     </header>
-
-    <p> Bem vindo <?php echo $_SESSION["nome_usuario"]; ?> - <?php echo $_SESSION["nome_empresa"]; ?></p>
+    <div class="adm">
+        <p> Bem vindo ADM: <?php echo $_SESSION["nome_usuario"]; ?> - <?php echo $_SESSION["nome_empresa"]; ?></p>
+    </div>
 
     <footer id="footer">
         <p class="copyright"> Dario Junior & Gabriel Muniz &copy; 2022 </p>
