@@ -36,7 +36,7 @@ require '../../connection/verifica.php';
             <div class="manual-conteudo">
                 <p>Olá, <?php echo $_SESSION["nome_usuario"]; ?>, Está enfrentando alguma dificuldade para entender o funcionamento do EasyStock?</p>
                 <p>Baixe nosso manual:</p>
-                <button><a href="../../src/manual/manual_do_sistema.pdf" download="Manual do Sistema" class="">Fazer Download</a></button>
+                <button ><a href="../../src/manual/manual_do_sistema.pdf" download="Manual do Sistema" class="btn-manual">Fazer Download</a></button>
             </div>
         </div>
 

@@ -99,13 +99,14 @@ a {
 
 /* HEADER */
 
-.titulo{
+.titulo {
     text-align: center;
     font-size: 30px;
     color: var(--blue);
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 40px;
+    text-decoration: underline;
 }
 
 /* MANUAL DO SISTEMA */
@@ -131,6 +132,25 @@ a {
     width: 600px;
     font-size: 18px;
     color: var(--second-bg);
+}
+
+.manual-conteudo button {
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-manual {
+    color: var(--white);
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    transform: all 0.3s ease-in-out;
+}
+
+.btn-manual:hover {
+    color: var(--white);
+    background-color: var(--second-bg);
 }
 
 /* MANUAL DO SISTEMA */
