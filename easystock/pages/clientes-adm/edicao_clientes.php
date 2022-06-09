@@ -1,18 +1,22 @@
 <?php
+require '../../connection/verifica.php';
 
-if (isset($_POST['submit'])) {
+if (!empty($_GET['id'])) {
     include_once('../../connection/config.php');
-    $nome = $_POST['nome'];
-    $nome_empresa = $_POST['empresa'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $id = $_GET['id'];
 
-    $result = mysqli_query($con, "INSERT INTO clientes (nome, nome_empresa, email, senha, nivel) VALUES ('$nome', '$nome_empresa', '$email', '$senha', 'ADM')");
+    $sqlSelect = "SELECT * FROM clientes WHERE id = $id";
+    $result = $con->query($sqlSelect);
 
-    if ($result) {
-        echo "<script>alert('Administrador cadastrado com sucesso!');top.location.href='../sistema/sistema-adm.php';</script>";
+    if ($result->num_rows > 0) {
+        while ($cliente_data = mysqli_fetch_assoc($result)) {
+            $nome = $cliente_data['nome'];
+            $nome_empresa = $cliente_data['nome_empresa'];
+            $email = $cliente_data['email'];
+            $senha = $cliente_data['senha'];
+        }
     } else {
-        echo "<script>alert('Erro ao cadastrar usuário!');top.location.href='../sistema/sistema-adm.php';</script>";
+        header("Location: ../login/login.php");
     }
 }
 ?>
@@ -24,9 +28,9 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyStock - Cadastro</title>
+    <title>EasyStock - Editar Perfil</title>
     <link rel="shortcut icon" href="../../src/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="cadastrar-adm.css">
+    <link rel="stylesheet" href="edicao-clientes.css">
 </head>
 
 <body>
@@ -36,39 +40,41 @@ if (isset($_POST['submit'])) {
                 <img src="../../src/img/logo.png" alt="">
             </div>
             <ul class="nav-list">
+                <li><a href="../../index.html">Home</a></li>
                 <li><a href="../sistema/sistema-adm.php" id="btn-voltar">Voltar</a></li>
-                <li><a href="../login/login.php" id="btn-sair">Sair do Sistema</a></li>
+                <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="box-login">
         <div class="box">
-            <form action="cadastrar-adm.php" method="POST" enctype="multipart/form-data">
+            <form action="saveEdit.php" method="POST">
                 <fieldset>
-                    <legend><b>Cadastar novo Administrador</b></legend>
+                    <legend><b>Editar seu perfil</b></legend>
                     <br>
                     <div class="inputBox">
-                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                        <input type="text" name="nome" id="nome" value="<?php echo $nome ?>" class="inputUser" required>
                         <label for="nome" class="labelInput">Nome</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="text" name="empresa" id="empresa" class="inputUser" required>
+                        <input type="text" name="empresa" id="empresa" value="<?php echo $nome_empresa ?>" class="inputUser" required>
                         <label for="empresa" class="labelInput">Nome da Empresa</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="email" name="email" id="email" class="inputUser" required>
+                        <input type="email" name="email" id="email" value="<?php echo $email ?>" class="inputUser" required>
                         <label for="email" class="labelInput">Email</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="password" name="senha" id="senha" class="inputUser" required>
+                        <input type="password" name="senha" id="senha" value="<?php echo $senha ?>" class="inputUser" required>
                         <label for="senha" class="labelInput">Senha</label>
                         <br><br>
                     </div>
-                    <input type="submit" name="submit" id="submit" value="Cadastrar">
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <input type="submit" name="update" id="update" value="Atualizar" onclick="mensagem()">
                 </fieldset>
             </form>
         </div>
@@ -78,5 +84,11 @@ if (isset($_POST['submit'])) {
         <p class="copyright"> Dario Junior & Gabriel Muniz &copy; 2022 </p>
     </footer>
 </body>
+
+<script>
+    function mensagem() {
+        alert("Usuário atualizado com sucesso!");
+    }
+</script>
 
 </html>

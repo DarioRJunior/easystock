@@ -36,7 +36,7 @@ if ($_SESSION["UsuarioNivel"] != "ADM") echo "<script>alert('Você não é Admin
                 <div class="sistema-container">
                     <h2>Sistema <?php echo $_SESSION["nome_empresa"]; ?></h2>
                     <a href="../cadastro/cadastrar-adm.php">Cadastrar Administrador</a>
-                    <a href="#">Ver clientes</a>
+                    <a href="../clientes-adm/relatorio-clientes.php">Ver clientes</a>
                 </div>
             </div>
         </section>
