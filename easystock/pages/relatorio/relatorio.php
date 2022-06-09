@@ -2,15 +2,22 @@
 require('../../connection/verifica.php');
 include_once '../../connection/config.php';
 
-$sql = "SELECT * FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
+if (!empty($_GET['search'])) {
+    $data = $_GET['search'];
+    $sql = "SELECT * FROM vendas WHERE nome LIKE '%$data%' or quantidade LIKE '%$data%' or preco LIKE '%$data%' or dataVenda LIKE '%$data%' ORDER BY id_venda DESC";
+} else {
+    $sql = "SELECT * FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
+}
+
+
 $query_relatorio = "SELECT COUNT(id_venda) AS qnt_vendas, SUM(preco) AS total_vendas FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
 $result = $con->query($sql);
 
-function invdata($dataVenda) 
+function invdata($dataVenda)
 {
     $parte = explode("-", $dataVenda);
     return ($parte[2] . "-" . $parte[1] . "-" . $parte[0]);
-} 
+}
 
 ?>
 
@@ -42,6 +49,14 @@ function invdata($dataVenda)
     <main>
         <section class="sistema">
             <div class="sistema-box">
+                <div class="box-search">
+                    <input type="search" placeholder="Pesquisar" id="pesquisar">
+                    <button onclick="searchData()" class="btn-search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </button>
+                </div>
                 <div class="sistema-container">
                     <h2>Relátorio de Vendas</h2>
                     <div class="table-container">
@@ -87,5 +102,17 @@ function invdata($dataVenda)
         <p class="copyright"> Dario Junior & Gabriel Muniz &copy; 2022 </p>
     </footer>
 </body>
+<script>
+    var search = document.getElementById('pesquisar');
+    search.addEventListener("keydown", function(event) {
+        if (event.key == "Enter") {
+            searchData();
+        }
+    });
+
+    function searchData() {
+        window.location = 'relatorio.php?search=' + search.value;
+    }
+</script>
 
 </html>

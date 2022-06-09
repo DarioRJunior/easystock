@@ -100,6 +100,36 @@ a {
 
 /* HEADER */
 
+.box-search{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+#pesquisar{
+    width: 300px;
+    height: 40px;
+    border: 1px solid var(--main-bg);
+    padding: 10px;
+    font-size: 16px;
+    color: var(--main-bg);
+    background-color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 20px;
+}
+.btn-search{
+    color: var(--white);
+    background-color: var(--light-blue);
+    height: 40px;
+    width: 40px;
+    text-transform: uppercase;
+    transform: all 0.3s ease-in-out;
+}
+
 .sistema {
     display: flex;
     justify-content: space-around;
@@ -149,6 +179,28 @@ a {
 
 .btns {
     width: 100px;
+}
+
+.btnEditar {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.btnEditar:hover {
+    background-color: var(--second-bg);
+}
+
+.btnExcluir {
+    background-color: var(--red);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.btnExcluir:hover {
+    background-color: var(--black-red);
 }
 
 .total-container {
