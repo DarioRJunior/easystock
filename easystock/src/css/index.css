@@ -179,7 +179,7 @@ a {
     height: 400px;
 }
 
-#equipe h1 {
+.titulo {
     color: var(--blue);
     text-align: center;
     text-transform: uppercase;
