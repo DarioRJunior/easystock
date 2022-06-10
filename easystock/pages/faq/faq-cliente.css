@@ -110,6 +110,7 @@ a {
     text-decoration: underline;
 }
 
+
 /* MANUAL DO SISTEMA */
 
 #manual {
@@ -155,9 +156,12 @@ a {
     background-color: var(--second-bg);
 }
 
+
 /* MANUAL DO SISTEMA */
 
+
 /* CADASTRO */
+
 #cadastro {
     display: flex;
     justify-content: center;
@@ -182,9 +186,12 @@ a {
     color: var(--second-bg);
 }
 
+
 /* CADASTRO */
 
+
 /* CONTATO */
+
 #contato {
     display: flex;
     justify-content: center;
@@ -209,16 +216,17 @@ a {
     color: var(--second-bg);
 }
 
-.email{
+.email {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
 
-.email a{
+.email a {
     text-decoration: underline;
     color: var(--blue);
 }
+
 
 /* CONTATO */
 
@@ -226,7 +234,7 @@ a {
 /* FOOTER */
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background: var(--main-bg);
     width: 100%;
