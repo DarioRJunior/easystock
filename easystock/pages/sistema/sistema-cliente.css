@@ -82,6 +82,7 @@ a {
     color: var(--white);
     background-color: var(--black-red);
 }
+
 #btn-perfil {
     color: var(--white);
     background-color: var(--light-blue);
@@ -97,15 +98,15 @@ a {
 }
 
 
-
 /* HEADER */
 
-.cliente{
+.cliente {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
     font-size: 30px;
 }
+
 
 /* SISTEMA */
 
@@ -117,6 +118,7 @@ a {
     margin: 0 auto;
     color: var(--white);
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .sistema-box {
@@ -165,12 +167,14 @@ a {
     color: var(--light-blue);
 }
 
+
 /* SISTEMA */
+
 
 /* FOOTER */
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     background: var(--main-bg);
     width: 100%;
