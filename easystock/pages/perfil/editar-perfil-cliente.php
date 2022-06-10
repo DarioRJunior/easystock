@@ -40,9 +40,8 @@ if (!empty($_GET['id'])) {
                 <img src="../../src/img/logo.png" alt="">
             </div>
             <ul class="nav-list">
-                <li><a href="../../index.html">Home</a></li>
                 <li><a href="../sistema/sistema-cliente.php" id="btn-voltar">Voltar</a></li>
-                <li><a href="../login/login.php" id="btn-sair">Sair</a></li>
+                <li><a href="../login/login.php" id="btn-sair">Sair do sistema</a></li>
             </ul>
         </nav>
     </header>
