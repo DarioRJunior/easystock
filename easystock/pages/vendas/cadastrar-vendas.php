@@ -2,17 +2,24 @@
 require('../../connection/verifica.php');
 include_once('../../connection/config.php');
 
-
 if (isset($_POST['submit'])) {
+    include_once('../../connection/config.php');
     $id_clientes = $_SESSION['id_usuario'];
-    $produto = $_POST['produto'];
+    $nome_produto = $_POST['nome_produto'];
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
 
+    $sql = "INSERT INTO vendas (id_clientes, id_produto, preco, quantidade, dataVenda) VALUES ('$id_clientes','$nome_produto', '$preco', '$quantidade', NOW())";
+    $result = mysqli_query($con, $sql);
 
-    $result = mysqli_query($con, "INSERT INTO vendas (id_cliente, id_produto, preco, quantidade, dataVenda) VALUES ('$id_clientes', '$produto', $preco', '$quantidade', NOW())");
+    if ($result) {
+        echo "<script>alert('Venda cadastrada com sucesso!');</script>";
+        echo "<script>window.location.href = '../../pages/vendas/cadastrar-vendas.php';</script>";
+    } else {
+        echo "<script>alert('Erro ao cadastrar venda!');</script>";
+        echo "<script>;</script>";
+    }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,10 +55,10 @@ if (isset($_POST['submit'])) {
                     <br>
                     <div class="inputBox">
                         <label for="produto">Produto</label> <br>
-                        <select name="produto" id="produto">
+                        <select name="select_produto" id="produto">
                             <option selected disable value="">Escolha...</option>
                             <?php
-                            $result_produtos = "SELECT * FROM produtos";
+                            $result_produtos = "SELECT * FROM produtos WHERE id_clientes = '" . $_SESSION["id_usuario"] . "' ORDER BY nome";
                             $resultado_produtos = mysqli_query($con, $result_produtos);
                             while ($row_produtos = mysqli_fetch_assoc($resultado_produtos)) {
                                 echo '<option value="' . $row_produtos['id'] . '">' . $row_produtos['nome'] . '</option>';
