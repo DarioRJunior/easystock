@@ -175,7 +175,17 @@ legend {
     background: var(--second-bg);
 }
 
-
+#produto{
+    background: var(--blue);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
 /* FORMULÁRIO DE CLIENTES */
 
 
