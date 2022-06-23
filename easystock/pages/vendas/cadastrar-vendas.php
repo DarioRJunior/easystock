@@ -10,7 +10,10 @@ if (isset($_POST['submit'])) {
     $quantidade = $_POST['quantidade'];
 
     $sql = "INSERT INTO vendas (id_clientes,nome, preco, quantidade, dataVenda) VALUES ('$id_clientes','$nome_produto','$preco', '$quantidade', NOW())";
+    $estoque = "UPDATE produtos SET quantidade = quantidade - '$quantidade' WHERE nome = '$nome_produto'";
+
     $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $estoque);
 
     if ($result) {
         echo "<script>alert('Venda cadastrada com sucesso!');</script>";
