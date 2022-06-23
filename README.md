@@ -23,11 +23,11 @@ Copie a pasta do projeto dentro do diretório do htdocs dentro do xampp, com o c
 
 depois vá para o programa Xampp, clique na aba Bin e digite a seguinte sequencia de comendo para criar o banco de dados:
 - mysql -h localhost -u root
-- CREATE DATABASE mangastore
+- CREATE DATABASE easystock
 
 Depois cole o arquivo mangastore.sql da pasta database dentro do diretório bin da pasta do xampp e execute o seguinte código para copiar o banco de dados do projeto
 abra o cmd da pasta bin e execute o seguinte código:
-- mysql -h localhost -u root -p mangastore < mangastore.sql
+- mysql -h localhost -u root -p easystock < easystock.sql
 
 
 ## 🛠 Tecnologias
