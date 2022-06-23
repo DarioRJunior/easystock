@@ -19,6 +19,11 @@ function invdata($dataVenda)
     return ($parte[2] . "-" . $parte[1] . "-" . $parte[0]);
 }
 
+function floatpreco($preco)
+{
+    return number_format($preco, 2, ',', '.');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +94,7 @@ function invdata($dataVenda)
                         $row_relatorio = mysqli_fetch_assoc($result_relatorio);
                         ?>
                         <h3>Total de vendas: <?php echo $row_relatorio["qnt_vendas"]; ?></h3>
-                        <h3>Total de vendas: R$ <?php echo $row_relatorio["total_vendas"]; ?></h3>
+                        <h3>Total de vendas: R$ <?php echo floatpreco($row_relatorio["total_vendas"]); ?></h3>
                     </div>
                     <button><a class="btn_relatorio" href="relatorioVendas.php" target="_blank">Baixar relatório</a></button>
                 </div>
