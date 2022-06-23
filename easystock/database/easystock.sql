@@ -75,16 +75,51 @@ VALUES
     (
         1,
         3,
-        'Bolo no Pote - Chocolate',
+        'A Fruta Filosofal',
         '20',
-        '15,00'
+        '9,34'
     ),
     (
         2,
         3,
-        'Bolo no Pote - Chocolate com morango',
+        'A Camada Secreta',
         '10',
-        '20,00'
+        '9,34'
+    ),
+    (
+        3,
+        3,
+        'O Prisioneiro de Askabanana',
+        '20',
+        '9,34'
+    ),
+    (
+        4,
+        3,
+        'O Confete de Fogo',
+        '20',
+        '9,34'
+    ),
+    (
+        5,
+        3,
+        'A Torta da Fenix',
+        '20',
+        '9,34'
+    ),
+    (
+        6,
+        3,
+        'O Chocolate do principe',
+        '20',
+        '9,34'
+    ),
+    (
+        7,
+        3,
+        'As delicias da morte',
+        '20',
+        '9,34'
     );
 
 CREATE TABLE IF NOT EXISTS `vendas`(
@@ -104,32 +139,32 @@ VALUES
     (
         1,
         3,
-        'Bolo no Pote - Chocolate',
-        '30,00',
+        'A Fruta Filosofal',
+        '18,68',
         '2',
         '2022-05-25'
     ),
     (
         2,
         3,
-        'Bolo no Pote - Chocolate com morango',
-        '80,00',
+        'As delicias da morte',
+        '37,36',
         '4',
         '2022-05-25'
     ),
     (
         3,
         3,
-        'Bolo no Pote - Chocolate com morango',
-        '20,00',
+        'O Prisioneiro de Askabanana',
+        '9,34',
         '1',
-        NOW()
+        '2022-05-26'
     ),
     (
         4,
         3,
-        'Bolo no Pote - Chocolate',
-        '15,00',
+        'A Fruta Filosofal',
+        '9,34',
         '1',
         NOW()
     );
