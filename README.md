@@ -1,31 +1,42 @@
 <h1 align="center">
-    EasyStock
+    Projeto EasyStock
 </h1>
 <h4 align="center"> 
-Projeto: 🚧Em andamento
+Projeto: 🚀Em andamento
 </h4>
 <p align="center">
  <a href="#-objetivo">Objetivo</a> •
- <a href="#-tecnologias">Tecnologias</a> •  
- <a href="#-licenca">Licença</a> • 
- <a href="#-autor">Autor</a>
+ <a href="#-Pré-Visualização">Instruções de instalação</a> •
+ <a href="#-tecnologias">Tecnologias</a> •
+ <a href="#-autor">Autor</a> • 
+ <a href="#-licença">Licença</a>
 </p>
 
 ## 💻 Objetivo
  
- Projeto com o foco de obter nota na matéria de PI - Projeto Integrador da Unicuritiba podendo vir a se tornar um projeto verdadeiro
+ Projeto sendo desenvolvido para matéria de PI da Unicuritiba.
+
+## 🖥️ Instruções de instalação
+
+Copie a pasta do projeto dentro do diretório do htdocs dentro do xampp, com o comando
+- git clone https://github.com/DarioRJunior/easystock.git
+
+depois vá para o programa Xampp, clique na aba Bin e digite a seguinte sequencia de comendo para criar o banco de dados:
+- mysql -h localhost -u root
+- CREATE DATABASE mangastore
+
+Depois cole o arquivo mangastore.sql da pasta database dentro do diretório bin da pasta do xampp e execute o seguinte código para copiar o banco de dados do projeto
+abra o cmd da pasta bin e execute o seguinte código:
+- mysql -h localhost -u root -p mangastore < mangastore.sql
 
 
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
-- <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
-- <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
-- <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white">
-
-
+- <img align="center" alt="Dario-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">HTML5
+- <img align="center" alt="Dario-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">CSS3
+- <img align="center" alt="Dario-PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">PHP
 
 ## 🦸 Autor
 
@@ -37,7 +48,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 [![Linkedin Badge](https://img.shields.io/badge/-Dario-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/dariocode/)](https://www.linkedin.com/in/dariocode/) 
 [![Gmail Badge](https://img.shields.io/badge/-darioarjr321@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:darioarjr321@gmail.com)](mailto:darioarjr321@gmail.com)
-
 
 
 ## 📝 Licença
