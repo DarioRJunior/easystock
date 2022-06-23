@@ -66,8 +66,8 @@ if (!empty($_GET['id'])) {
                         <label for="preco" class="labelInput">Preço</label>
                     </div>
                     <br><br>
-                    <input type="hidden" name="id" value="<?php echo $id ?>">
-                    <input type="submit" name="update" id="update" value="Atualizar" onclick="mensagem()">
+                    <input type="hidden" name="id" value="<?php echo $id_produto ?>">
+                    <input type="submit" name="update" id="update" value="Atualizar">
                 </fieldset>
             </form>
         </div>
