@@ -5,19 +5,19 @@ include_once('../../connection/config.php');
 if (isset($_POST['submit'])) {
     include_once('../../connection/config.php');
     $id_clientes = $_SESSION['id_usuario'];
-    $nome_produto = $_POST['nome_produto'];
+    $nome_produto = $_POST['select_produto'];
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
 
-    $sql = "INSERT INTO vendas (id_clientes, id_produto, preco, quantidade, dataVenda) VALUES ('$id_clientes','$nome_produto', '$preco', '$quantidade', NOW())";
+    $sql = "INSERT INTO vendas (id_clientes,nome, preco, quantidade, dataVenda) VALUES ('$id_clientes','$nome_produto','$preco', '$quantidade', NOW())";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
         echo "<script>alert('Venda cadastrada com sucesso!');</script>";
         echo "<script>window.location.href = '../../pages/vendas/cadastrar-vendas.php';</script>";
     } else {
-        echo "<script>alert('Erro ao cadastrar venda!');</script>";
-        echo "<script>;</script>";
+        // echo "<script>alert('Erro ao cadastrar venda!');</script>";
+        echo "ERRO -  ". $sql;
     }
 }
 ?>
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
     <div class="box-login">
         <div class="box">
-            <form action="cadastrar-vendas.php" method="POST" enctype="multipart/form-data">
+            <form action="cadastrar-vendas.php" method="POST">
                 <fieldset>
                     <legend><b>Cadastar venda</b></legend>
                     <br>
@@ -58,10 +58,10 @@ if (isset($_POST['submit'])) {
                         <select name="select_produto" id="produto">
                             <option selected disable value="">Escolha...</option>
                             <?php
-                            $result_produtos = "SELECT * FROM produtos WHERE id_clientes = '" . $_SESSION["id_usuario"] . "' ORDER BY nome";
+                            $result_produtos = "SELECT id_produto, nome FROM produtos WHERE id_clientes = '" . $_SESSION["id_usuario"] . "' ORDER BY nome";
                             $resultado_produtos = mysqli_query($con, $result_produtos);
                             while ($row_produtos = mysqli_fetch_assoc($resultado_produtos)) {
-                                echo '<option value="' . $row_produtos['id'] . '">' . $row_produtos['nome'] . '</option>';
+                                echo '<option value="' . $row_produtos['nome'] . '">' . $row_produtos['nome'] . '</option>';
                             }
                             ?>
                         </select>
