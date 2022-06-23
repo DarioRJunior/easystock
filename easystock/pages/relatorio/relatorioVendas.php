@@ -5,6 +5,7 @@ include('../../connection/verifica.php');
 include('../../connection/fpdf184/fpdf.php');
 
 $relatorio = "SELECT * FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
+$query_relatorio = "SELECT COUNT(id_venda) AS qnt_vendas, SUM(preco) AS total_vendas FROM vendas WHERE id_clientes = '" . $_SESSION["id_usuario"] . "'";
 
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -24,6 +25,13 @@ foreach($con->query($relatorio) as $row) {
     $pdf->Cell(30, 10, utf8_decode($row['quantidade']), 1, 0, 'C');
     $pdf->Cell(30, 10, utf8_decode($row['preco']), 1, 0, 'C');
     $pdf->Cell(30, 10, utf8_decode($row['dataVenda']), 1, 0, 'C');
+    $pdf->Ln(10);
+}
+
+foreach($con->query($query_relatorio) as $row) {
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(100, 10, utf8_decode('Valor Total'), 1, 0, 'C');
+    $pdf->Cell(90, 10, utf8_decode($row['total_vendas']), 1, 0, 'C');
     $pdf->Ln(10);
 }
 
