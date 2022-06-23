@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `produtos`(
     `id_clientes` int(2) NOT NULL,
     `nome` varchar(45) NOT NULL,
     `quantidade` int NOT NULL,
-    `preco` DECIMAL(10, 2) NOT NULL,
+    `preco` float NOT NULL,
     PRIMARY KEY (`id_produto`),
     FOREIGN KEY (`id_clientes`) REFERENCES `clientes`(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = latin1;
@@ -77,56 +77,56 @@ VALUES
         3,
         'A Fruta Filosofal',
         '20',
-        '9,34'
+        '9.34'
     ),
     (
         2,
         3,
         'A Camada Secreta',
         '10',
-        '9,34'
+        '9.34'
     ),
     (
         3,
         3,
         'O Prisioneiro de Askabanana',
         '20',
-        '9,34'
+        '9.34'
     ),
     (
         4,
         3,
         'O Confete de Fogo',
         '20',
-        '9,34'
+        '9.34'
     ),
     (
         5,
         3,
         'A Torta da Fenix',
         '20',
-        '9,34'
+        '9.34'
     ),
     (
         6,
         3,
-        'O Chocolate do principe',
+        'O Chocolate do Principe',
         '20',
-        '9,34'
+        '9.34'
     ),
     (
         7,
         3,
-        'As delicias da morte',
+        'As delicias da Morte',
         '20',
-        '9,34'
+        '9.34'
     );
 
 CREATE TABLE IF NOT EXISTS `vendas`(
     `id_venda` int(2) NOT NULL AUTO_INCREMENT,
     `id_clientes` int(2) NOT NULL,
     `nome` varchar(45) NOT NULL,
-    `preco` DECIMAL(10, 2) NOT NULL,
+    `preco`float NOT NULL,
     `quantidade` int NOT NULL,
     `dataVenda` date,
     PRIMARY KEY (`id_venda`),
@@ -140,7 +140,7 @@ VALUES
         1,
         3,
         'A Fruta Filosofal',
-        '18,68',
+        '18.68',
         '2',
         '2022-05-25'
     ),
@@ -148,7 +148,7 @@ VALUES
         2,
         3,
         'As delicias da morte',
-        '37,36',
+        '37.36',
         '4',
         '2022-05-25'
     ),
@@ -156,7 +156,7 @@ VALUES
         3,
         3,
         'O Prisioneiro de Askabanana',
-        '9,34',
+        '9.34',
         '1',
         '2022-05-26'
     ),
@@ -164,7 +164,7 @@ VALUES
         4,
         3,
         'A Fruta Filosofal',
-        '9,34',
+        '9.34',
         '1',
         NOW()
     );
